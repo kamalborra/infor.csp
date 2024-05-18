@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Batch Script</title>
+</head>
+<body>
+    <h1>Run Batch Script</h1>
+    <button onclick="runBatchScript()">Run Script</button>
 
+    <script type="text/javascript">
+        function runBatchScript() {
+            try {
+                var shell = new ActiveXObject("WScript.Shell");
+                var scriptPath = "C:\\path\\to\\your\\script.bat"; // Update this path to the location of your batch script
+                shell.Run("cmd.exe /c " + scriptPath, 0, true);
+            } catch (e) {
+                alert("This action is not supported in your current browser or security settings.");
+                console.log(e.message);
+            }
+        }
+    </script>
+</body>
+</html>
